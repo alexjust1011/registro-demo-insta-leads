@@ -3,85 +3,56 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ponsoda & Bernat Abogados | Defensa legal clara, rápida y cercana</title>
-  <meta name="description" content="Despacho de abogados en Oliva (Valencia). Especialistas en derecho penal, civil, familia, mercantil y más. Consulta inicial y respuesta rápida." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Ponsoda & Bernat Abogados | Asesoría legal premium en Oliva</title>
+  <meta name="description" content="Despacho de abogados en Oliva (Valencia). Defensa penal, civil, familia, mercantil y administrativo. Asesoría cercana, estrategia sólida y respuesta rápida." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0b1220;
-      --bg-soft: #111a2e;
-      --card: #131f37;
-      --text: #e9eefb;
-      --muted: #adbbd8;
-      --primary: #7dd3fc;
-      --secondary: #a78bfa;
-      --success: #34d399;
-      --border: #24355d;
-      --max: 1120px;
+      --bg: #0d1420;
+      --bg-soft: #121c2c;
+      --card: #162338;
+      --text: #ecf0f6;
+      --muted: #b2bfd2;
+      --accent: #c7a86f;
+      --accent-soft: #e8d2a8;
+      --line: #2a3a54;
+      --ok: #89b495;
+      --max: 1140px;
       --radius: 18px;
-      --shadow: 0 18px 50px rgba(4,10,25,.35);
+      --shadow: 0 20px 46px rgba(0, 0, 0, .32);
     }
 
     * { box-sizing: border-box; }
-
     html, body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(circle at 10% -10%, #1c2f57 0, transparent 35%),
-                  radial-gradient(circle at 100% 0, #30205e 0, transparent 35%),
-                  var(--bg);
+      background:
+        radial-gradient(circle at 10% -10%, rgba(199,168,111,.17), transparent 28%),
+        radial-gradient(circle at 90% 0, rgba(73,102,149,.18), transparent 30%),
+        var(--bg);
       color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       scroll-behavior: smooth;
     }
 
     a { color: inherit; text-decoration: none; }
-
     .container { width: min(100% - 2rem, var(--max)); margin-inline: auto; }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: .5rem;
-      border: 0;
-      border-radius: 999px;
-      padding: .85rem 1.2rem;
-      font-weight: 600;
-      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover { transform: translateY(-1px); }
-    .btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
-
-    .btn-primary {
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      color: #09111e;
-      box-shadow: 0 10px 25px rgba(125, 211, 252, .35);
-    }
-
-    .btn-ghost {
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(10px);
-      background: rgba(8, 13, 25, .68);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      z-index: 40;
+      backdrop-filter: blur(12px);
+      background: rgba(9, 14, 24, .72);
+      border-bottom: 1px solid rgba(255,255,255,.09);
     }
 
     .nav {
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 74px;
       gap: 1rem;
     }
 
@@ -89,109 +60,105 @@
       display: flex;
       align-items: center;
       gap: .75rem;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: .2px;
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 12px;
-      background: linear-gradient(140deg, var(--primary), var(--secondary));
-      color: #0a0f1f;
       display: grid;
       place-items: center;
       font-weight: 800;
+      color: #1d1a16;
+      background: linear-gradient(140deg, var(--accent-soft), var(--accent));
+      box-shadow: 0 8px 20px rgba(199,168,111,.35);
     }
 
-    .nav-links {
-      display: flex;
-      gap: 1.2rem;
-      color: var(--muted);
-      font-weight: 500;
+    .nav-links { display: flex; gap: 1.2rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: .82rem 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .2s ease;
     }
 
-    .hero {
-      padding: 5rem 0 2.4rem;
+    .btn:hover { transform: translateY(-1px); }
+    .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent-soft), var(--accent));
+      color: #1a1610;
+      box-shadow: 0 10px 22px rgba(199,168,111,.28);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 1.5rem;
-      align-items: stretch;
+    .btn-ghost {
+      border-color: var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
     }
 
-    .hero-main, .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      border: 1px solid rgba(255,255,255,.08);
+    .hero { padding: 5.2rem 0 2.5rem; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 1rem; }
+
+    .panel {
+      border: 1px solid rgba(255,255,255,.1);
       border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
       box-shadow: var(--shadow);
     }
 
-    .hero-main { padding: clamp(1.4rem, 2.4vw, 2.4rem); }
+    .hero-main { padding: clamp(1.3rem, 2.2vw, 2.3rem); }
 
     .eyebrow {
       display: inline-flex;
-      gap: .5rem;
+      border: 1px solid rgba(199,168,111,.36);
+      background: rgba(199,168,111,.12);
+      color: var(--accent-soft);
       font-size: .82rem;
-      color: var(--primary);
-      background: rgba(125,211,252,.11);
-      border: 1px solid rgba(125,211,252,.25);
       border-radius: 999px;
-      padding: .3rem .8rem;
-      margin-bottom: .95rem;
+      padding: .32rem .8rem;
+      margin-bottom: .85rem;
     }
 
-    h1, h2, h3 { margin: 0 0 .8rem; line-height: 1.12; }
-    h1 { font-size: clamp(2rem, 3.8vw, 3.4rem); }
-    h2 { font-size: clamp(1.45rem, 2.6vw, 2.15rem); }
-    h3 { font-size: 1.15rem; }
+    h1,h2,h3 { margin: 0 0 .8rem; line-height: 1.13; }
+    h1, h2 { font-family: "Cormorant Garamond", Georgia, serif; letter-spacing: .2px; }
+    h1 { font-size: clamp(2.2rem, 4.2vw, 3.6rem); }
+    h2 { font-size: clamp(1.7rem, 2.8vw, 2.4rem); }
+    h3 { font-size: 1.1rem; }
 
-    p { margin: 0 0 1rem; color: var(--muted); line-height: 1.65; }
+    p { margin: 0 0 .95rem; color: var(--muted); line-height: 1.67; }
 
-    .hero-cta { display: flex; flex-wrap: wrap; gap: .7rem; margin: 1.2rem 0 1.3rem; }
-
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .6rem;
-      margin-top: .6rem;
-    }
-
+    .hero-cta { display: flex; flex-wrap: wrap; gap: .65rem; margin: 1.15rem 0 1.2rem; }
+    .badges { display: flex; flex-wrap: wrap; gap: .55rem; }
     .badge {
-      font-size: .84rem;
-      color: #d5e4ff;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.02);
+      font-size: .82rem;
       border-radius: 999px;
-      padding: .38rem .68rem;
+      border: 1px solid var(--line);
+      padding: .36rem .68rem;
+      color: #dce5f2;
+      background: rgba(255,255,255,.02);
     }
 
-    .hero-card {
-      padding: 1.2rem;
-      display: grid;
-      gap: .9rem;
-    }
-
+    .hero-side { padding: 1rem; display: grid; gap: .8rem; }
     .kpi {
-      background: rgba(9,15,31,.65);
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: 14px;
-      padding: .9rem;
+      padding: .92rem;
+      background: rgba(12,19,33,.66);
     }
+    .kpi strong { display: block; color: #fff; margin-bottom: .2rem; font-size: 1.35rem; }
 
-    .kpi strong { display: block; font-size: 1.35rem; color: white; margin-bottom: .1rem; }
-
-    section { padding: 2.8rem 0; }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.2rem;
-    }
+    section { padding: 2.9rem 0; }
+    .section-head { margin-bottom: 1.15rem; }
 
     .cards {
       display: grid;
@@ -200,45 +167,55 @@
     }
 
     .card {
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border: 1px solid var(--line);
       border-radius: 16px;
       padding: 1rem;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
       box-shadow: var(--shadow);
     }
-
-    .card p { margin-bottom: 0; font-size: .95rem; }
 
     .icon {
       width: 42px;
       height: 42px;
+      border-radius: 12px;
       display: grid;
       place-items: center;
-      border-radius: 11px;
-      margin-bottom: .7rem;
-      font-size: 1.2rem;
-      background: linear-gradient(145deg, rgba(125,211,252,.22), rgba(167,139,250,.18));
-      border: 1px solid rgba(255,255,255,.15);
+      margin-bottom: .65rem;
+      border: 1px solid rgba(199,168,111,.4);
+      background: rgba(199,168,111,.15);
     }
 
-    .process {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-    }
-
-    .step { position: relative; padding-top: .2rem; }
+    .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
     .step-num {
       width: 36px;
       height: 36px;
       border-radius: 999px;
       display: grid;
       place-items: center;
+      border: 1px solid rgba(199,168,111,.6);
+      background: rgba(199,168,111,.22);
+      color: #fff;
       font-weight: 700;
-      background: rgba(125,211,252,.2);
-      border: 1px solid rgba(125,211,252,.5);
-      margin-bottom: .7rem;
+      margin-bottom: .6rem;
     }
+
+    .quote {
+      border-left: 3px solid var(--accent);
+      padding-left: .9rem;
+      margin-top: .55rem;
+      color: #dce5f2;
+      font-style: italic;
+    }
+
+    .faq details {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: .85rem 1rem;
+      background: rgba(255,255,255,.02);
+      margin-bottom: .65rem;
+    }
+
+    .faq summary { cursor: pointer; font-weight: 600; color: #f1f4fa; }
 
     .contact {
       display: grid;
@@ -246,47 +223,30 @@
       gap: 1rem;
     }
 
-    .contact .card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
-
-    .faq details {
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.02);
-      border-radius: 12px;
-      padding: .8rem 1rem;
-      margin-bottom: .6rem;
-    }
-
-    .faq summary {
-      cursor: pointer;
-      font-weight: 600;
-      color: #e8efff;
-    }
+    .contact ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .65rem; }
 
     .cta-final {
       text-align: center;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2rem 1rem;
-      background: linear-gradient(135deg, rgba(125,211,252,.15), rgba(167,139,250,.14));
+      background: linear-gradient(140deg, rgba(199,168,111,.15), rgba(255,255,255,.03));
     }
 
     footer {
-      border-top: 1px solid rgba(255,255,255,.12);
-      padding: 1.5rem 0 2.2rem;
+      border-top: 1px solid rgba(255,255,255,.1);
       color: var(--muted);
+      padding: 1.6rem 0 2.2rem;
       font-size: .92rem;
     }
 
     @media (max-width: 960px) {
       .hero-grid, .contact { grid-template-columns: 1fr; }
-      .cards { grid-template-columns: repeat(2, 1fr); }
-      .process { grid-template-columns: repeat(2, 1fr); }
+      .cards { grid-template-columns: repeat(2,1fr); }
+      .process { grid-template-columns: repeat(2,1fr); }
       .nav-links { display: none; }
     }
 
     @media (max-width: 640px) {
       .cards, .process { grid-template-columns: 1fr; }
-      .hero { padding-top: 3.5rem; }
+      .hero { padding-top: 3.8rem; }
     }
   </style>
 </head>
@@ -299,8 +259,8 @@
       </a>
       <nav class="nav-links" aria-label="Navegación principal">
         <a href="#servicios">Servicios</a>
-        <a href="#proceso">Cómo trabajamos</a>
-        <a href="#faq">FAQ</a>
+        <a href="#proceso">Método</a>
+        <a href="#opiniones">Opiniones</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <a class="btn btn-primary" href="tel:+34678365709">Llamar ahora</a>
@@ -310,33 +270,33 @@
   <main id="inicio">
     <section class="hero">
       <div class="container hero-grid">
-        <article class="hero-main">
+        <article class="panel hero-main">
           <span class="eyebrow">Despacho legal en Oliva, Valencia</span>
-          <h1>Defensa legal estratégica, humana y sin rodeos.</h1>
-          <p>Si te enfrentas a un problema legal, no deberías hacerlo solo. Te ofrecemos una asesoría cercana, un plan claro desde el primer día y acompañamiento real hasta la resolución de tu caso.</p>
+          <h1>Una defensa legal sólida con elegancia, precisión y cercanía.</h1>
+          <p>Transformamos situaciones complejas en decisiones claras. Analizamos tu caso a fondo, diseñamos una estrategia realista y te acompañamos de principio a fin con trato directo.</p>
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#contacto">Solicitar consulta</a>
-            <a class="btn btn-ghost" href="https://wa.me/34646734083" target="_blank" rel="noopener">WhatsApp directo</a>
+            <a class="btn btn-primary" href="#contacto">Reservar consulta</a>
+            <a class="btn btn-ghost" href="https://wa.me/34646734083" target="_blank" rel="noopener">WhatsApp</a>
           </div>
           <div class="badges" aria-label="Puntos de valor">
-            <span class="badge">✅ Respuesta en menos de 24h</span>
-            <span class="badge">✅ Trato personalizado</span>
-            <span class="badge">✅ Defensa integral</span>
+            <span class="badge">✔ Respuesta en &lt; 24h</span>
+            <span class="badge">✔ Estrategia personalizada</span>
+            <span class="badge">✔ Atención discreta</span>
           </div>
         </article>
 
-        <aside class="hero-card" aria-label="Resumen de despacho">
+        <aside class="panel hero-side" aria-label="Resumen del despacho">
           <div class="kpi">
             <strong>+10 años</strong>
-            <p>de experiencia en procedimientos civiles, penales y administrativos.</p>
+            <p>acompañando a clientes en litigios civiles, penales y administrativos.</p>
           </div>
           <div class="kpi">
-            <strong>365 días</strong>
-            <p>asistencia legal urgente en situaciones de detención.</p>
+            <strong>Asistencia 365</strong>
+            <p>intervención urgente ante detenciones y actuaciones inmediatas.</p>
           </div>
           <div class="kpi">
-            <strong>Atención bilingüe</strong>
-            <p>español e inglés para clientes nacionales e internacionales.</p>
+            <strong>Español / Inglés</strong>
+            <p>atención bilingüe para particulares y empresas.</p>
           </div>
         </aside>
       </div>
@@ -345,19 +305,17 @@
     <section id="servicios">
       <div class="container">
         <div class="section-head">
-          <div>
-            <h2>Áreas de especialización</h2>
-            <p>Servicio integral para personas, familias y empresas.</p>
-          </div>
+          <h2>Áreas de práctica</h2>
+          <p>Defensa integral para personas, familias y actividad empresarial.</p>
         </div>
 
         <div class="cards">
-          <article class="card"><div class="icon">⚖️</div><h3>Derecho penal</h3><p>Defensa en diligencias, juicios rápidos, delitos patrimoniales y asistencia al detenido.</p></article>
-          <article class="card"><div class="icon">🏛️</div><h3>Derecho administrativo</h3><p>Urbanismo, extranjería, expedientes sancionadores y recursos contencioso-administrativos.</p></article>
-          <article class="card"><div class="icon">📜</div><h3>Derecho civil</h3><p>Contratos, herencias, reclamaciones de cantidad e indemnizaciones por daños.</p></article>
-          <article class="card"><div class="icon">👨‍👩‍👧</div><h3>Derecho de familia</h3><p>Divorcio, custodia, pensiones y medidas para proteger el interés de los menores.</p></article>
-          <article class="card"><div class="icon">🚗</div><h3>Accidentes de tráfico</h3><p>Reclamación de indemnizaciones, secuelas y defensa frente a responsabilidades.</p></article>
-          <article class="card"><div class="icon">🏢</div><h3>Mercantil y bancario</h3><p>Empresas, contratos, cláusulas abusivas, tarjetas revolving y ejecución hipotecaria.</p></article>
+          <article class="card"><div class="icon">⚖️</div><h3>Derecho Penal</h3><p>Defensa técnica en fase policial y judicial, juicios rápidos y procedimientos complejos.</p></article>
+          <article class="card"><div class="icon">📘</div><h3>Derecho Civil</h3><p>Contratos, reclamaciones, responsabilidad civil, herencias y conflictos patrimoniales.</p></article>
+          <article class="card"><div class="icon">👨‍👩‍👧</div><h3>Familia</h3><p>Separaciones, divorcios, custodia, pensiones y medidas de protección de menores.</p></article>
+          <article class="card"><div class="icon">🏛️</div><h3>Administrativo</h3><p>Sanciones, extranjería, urbanismo y recursos ante la Administración Pública.</p></article>
+          <article class="card"><div class="icon">🚘</div><h3>Accidentes</h3><p>Reclamación de indemnizaciones por lesiones, secuelas y perjuicios económicos.</p></article>
+          <article class="card"><div class="icon">🏢</div><h3>Mercantil y Bancario</h3><p>Conflictos societarios, contratos de empresa y defensa frente a cláusulas abusivas.</p></article>
         </div>
       </div>
     </section>
@@ -365,39 +323,49 @@
     <section id="proceso">
       <div class="container">
         <div class="section-head">
-          <div>
-            <h2>Cómo trabajamos contigo</h2>
-            <p>Un proceso sencillo y transparente, sin tecnicismos innecesarios.</p>
-          </div>
+          <h2>Método de trabajo</h2>
+          <p>Un proceso transparente, riguroso y orientado a resultados.</p>
         </div>
         <div class="process">
-          <article class="card step"><div class="step-num">1</div><h3>Primera consulta</h3><p>Analizamos tu situación, urgencias y documentación.</p></article>
-          <article class="card step"><div class="step-num">2</div><h3>Estrategia legal</h3><p>Te explicamos opciones reales, riesgos y próximos pasos.</p></article>
-          <article class="card step"><div class="step-num">3</div><h3>Defensa y seguimiento</h3><p>Ejecutamos la estrategia con comunicación constante.</p></article>
-          <article class="card step"><div class="step-num">4</div><h3>Resolución</h3><p>Buscamos el mejor resultado posible y cierre seguro del caso.</p></article>
+          <article class="card"><div class="step-num">1</div><h3>Diagnóstico</h3><p>Revisión jurídica del caso, riesgos, plazos y urgencias.</p></article>
+          <article class="card"><div class="step-num">2</div><h3>Estrategia</h3><p>Hoja de ruta con escenarios, costes y objetivos definidos.</p></article>
+          <article class="card"><div class="step-num">3</div><h3>Ejecución</h3><p>Defensa activa con seguimiento continuo y comunicación clara.</p></article>
+          <article class="card"><div class="step-num">4</div><h3>Resolución</h3><p>Negociación o litigio con foco en el mejor resultado viable.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="faq" class="faq">
+    <section id="opiniones">
       <div class="container">
         <div class="section-head">
-          <div>
-            <h2>Preguntas frecuentes</h2>
-            <p>Respuestas rápidas para tomar decisiones con seguridad.</p>
-          </div>
+          <h2>Lo que valoran nuestros clientes</h2>
+          <p>Confianza, claridad y rigor en momentos decisivos.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><h3>Trato impecable</h3><p class="quote">“Me explicaron cada paso sin tecnicismos y gané tranquilidad desde el primer día.”</p></article>
+          <article class="card"><h3>Rapidez y estrategia</h3><p class="quote">“Actuaron con rapidez y una estrategia muy clara. Resultado excelente.”</p></article>
+          <article class="card"><h3>Confianza total</h3><p class="quote">“Profesionalidad, cercanía y honestidad en todo el proceso.”</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>Preguntas frecuentes</h2>
+          <p>Respuestas rápidas para decidir con seguridad.</p>
         </div>
         <details>
-          <summary>¿Puedo tener una primera orientación sin compromiso?</summary>
-          <p>Sí. Cuéntanos tu caso y te indicaremos la viabilidad inicial, la documentación necesaria y el siguiente paso recomendado.</p>
+          <summary>¿Puedo tener una orientación inicial del caso?</summary>
+          <p>Sí. Valoramos la viabilidad y te indicamos la documentación necesaria para comenzar con garantías.</p>
         </details>
         <details>
           <summary>¿Atendéis urgencias por detención?</summary>
-          <p>Sí, disponemos de asistencia urgente para detenciones y actuaciones inmediatas los 365 días del año.</p>
+          <p>Sí, ofrecemos asistencia urgente para actuaciones inmediatas durante todo el año.</p>
         </details>
         <details>
-          <summary>¿Cómo sabré el coste del procedimiento?</summary>
-          <p>Tras revisar tu asunto, te presentaremos un presupuesto claro y por escrito, sin costes ocultos.</p>
+          <summary>¿Cómo se define el presupuesto?</summary>
+          <p>Recibirás una propuesta escrita, clara y adaptada al alcance real del asunto.</p>
         </details>
       </div>
     </section>
@@ -406,30 +374,28 @@
       <div class="container contact">
         <article class="card">
           <h2>Contacto directo</h2>
-          <p>Estamos en Oliva (Valencia) y atendemos presencial y online.</p>
+          <p>Atención presencial en Oliva y online para toda España.</p>
           <ul>
             <li><strong>📞 Teléfono:</strong> <a href="tel:+34678365709">+34 678 36 57 09</a></li>
             <li><strong>📱 WhatsApp:</strong> <a href="https://wa.me/34646734083" target="_blank" rel="noopener">+34 646 73 40 83</a></li>
             <li><strong>✉️ Email:</strong> <a href="mailto:macu@ponbeabogados.com">macu@ponbeabogados.com</a></li>
             <li><strong>📍 Dirección:</strong> C/ Les Fonts 15, E, 46780 Oliva (Valencia)</li>
-            <li><strong>🕒 Horario:</strong> Lunes a viernes de 08:00 a 20:00</li>
+            <li><strong>🕒 Horario:</strong> Lunes a viernes · 08:00 a 20:00</li>
           </ul>
         </article>
 
         <article class="card cta-final">
-          <h2>¿Hablamos de tu caso hoy?</h2>
-          <p>Te damos una hoja de ruta clara para que sepas exactamente qué hacer y cuándo hacerlo.</p>
-          <p>
-            <a class="btn btn-primary" href="mailto:macu@ponbeabogados.com?subject=Consulta%20legal">Enviar consulta</a>
-          </p>
-          <p style="font-size:.9rem;margin:0">Respuesta estimada: &lt; 24 horas hábiles.</p>
+          <h2>¿Hablamos hoy de tu caso?</h2>
+          <p>Te daremos una hoja de ruta legal concreta para que sepas qué hacer desde el primer momento.</p>
+          <p><a class="btn btn-primary" href="mailto:macu@ponbeabogados.com?subject=Consulta%20legal">Enviar consulta</a></p>
+          <p style="font-size:.9rem;margin:0">Tiempo estimado de respuesta: &lt; 24h hábiles.</p>
         </article>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container" style="display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;align-items:center">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap">
       <span>© <span id="year"></span> Ponsoda & Bernat Abogados. Todos los derechos reservados.</span>
       <a href="#inicio">Volver arriba ↑</a>
     </div>
