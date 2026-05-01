@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ponsoda & Bernat Abogados | Despacho premium en Oliva</title>
+  <meta name="description" content="Despacho de abogados en Oliva (Valencia). Defensa legal estratégica en derecho penal, civil, familia, mercantil y administrativo. Atención cercana y respuesta ágil." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0d1420;
+      --bg-soft: #131e2f;
+      --card: #17263d;
+      --text: #edf2f9;
+      --muted: #b4c1d4;
+      --accent: #c9a66a;
+      --accent-soft: #edd8b4;
+      --line: #2f405c;
+      --ok: #90bc9c;
+      --max: 1160px;
+      --radius: 18px;
+      --shadow: 0 24px 60px rgba(0, 0, 0, .36);
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 8% -12%, rgba(201,166,106,.14), transparent 27%),
+        radial-gradient(circle at 98% 0, rgba(75,98,139,.2), transparent 30%),
+        var(--bg);
+      scroll-behavior: smooth;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(100% - 2rem, var(--max)); margin-inline: auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(8, 13, 23, .75);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .9rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      font-weight: 700;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      color: #20180d;
+      font-weight: 800;
+      background: linear-gradient(140deg, var(--accent-soft), var(--accent));
+      box-shadow: 0 8px 20px rgba(201,166,106,.3);
+      animation: pulseGlow 5s ease-in-out infinite;
+    }
+
+    .nav-links { display: flex; gap: 1.2rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: .82rem 1.2rem;
+      font-weight: 600;
+      transition: transform .2s ease, box-shadow .2s ease;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent-soft), var(--accent));
+      color: #1f170d;
+      box-shadow: 0 10px 24px rgba(201,166,106,.28);
+    }
+    .btn-ghost {
+      border-color: var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+    }
+
+    .hero { padding: 5rem 0 2.4rem; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .panel {
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: clamp(1.4rem, 2.4vw, 2.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      padding: .35rem .8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(201,166,106,.34);
+      background: rgba(201,166,106,.12);
+      color: var(--accent-soft);
+      font-size: .82rem;
+      margin-bottom: .8rem;
+    }
+
+    h1,h2,h3 { margin: 0 0 .8rem; line-height: 1.13; }
+    h1, h2 { font-family: "Cormorant Garamond", Georgia, serif; letter-spacing: .2px; }
+    h1 { font-size: clamp(2.25rem, 4.4vw, 3.7rem); }
+    h2 { font-size: clamp(1.75rem, 2.8vw, 2.45rem); }
+    h3 { font-size: 1.1rem; }
+
+    p { margin: 0 0 .95rem; color: var(--muted); line-height: 1.68; }
+
+    .hero-cta { display: flex; flex-wrap: wrap; gap: .7rem; margin: 1rem 0 1.15rem; }
+    .badges { display: flex; gap: .55rem; flex-wrap: wrap; }
+    .badge {
+      border-radius: 999px;
+      padding: .35rem .7rem;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      font-size: .82rem;
+      color: #dde6f3;
+    }
+
+    .hero-media { position: relative; overflow: hidden; }
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 410px;
+      filter: saturate(104%);
+      transform: scale(1.02);
+      animation: slowZoom 14s ease-in-out infinite alternate;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: auto 1rem 1rem 1rem;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 14px;
+      padding: .85rem;
+      background: rgba(9, 14, 23, .65);
+      backdrop-filter: blur(8px);
+      max-width: 340px;
+    }
+    .hero-overlay strong { display: block; color: #fff; margin-bottom: .2rem; }
+
+    .strip {
+      margin-top: 1.3rem;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: .8rem;
+    }
+    .strip .mini {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: .8rem;
+      background: rgba(255,255,255,.02);
+    }
+    .mini strong { display: block; color: white; margin-bottom: .2rem; }
+
+    section { padding: 3rem 0; }
+    .section-head { margin-bottom: 1.2rem; }
+
+    .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1rem;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      box-shadow: var(--shadow);
+      transition: transform .25s ease, border-color .25s ease;
+    }
+    .card:hover { transform: translateY(-4px); border-color: rgba(201,166,106,.45); }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      margin-bottom: .65rem;
+      border: 1px solid rgba(201,166,106,.44);
+      background: rgba(201,166,106,.15);
+      overflow: hidden;
+    }
+    .icon img { width: 24px; height: 24px; object-fit: contain; }
+
+    .process { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(201,166,106,.55);
+      background: rgba(201,166,106,.2);
+      font-weight: 700;
+      margin-bottom: .6rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 1rem;
+    }
+    .gallery-main, .gallery-side { overflow: hidden; }
+    .gallery-main img, .gallery-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+    .gallery-side { display: grid; gap: 1rem; grid-template-rows: 1fr 1fr; }
+
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: .75rem;
+      align-items: center;
+    }
+    .logo-item {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: .8rem;
+      background: #f4f5f7;
+      min-height: 86px;
+      display: grid;
+      place-items: center;
+      filter: grayscale(100%);
+      transition: filter .2s ease;
+    }
+    .logo-item:hover { filter: grayscale(0); }
+    .logo-item img { max-height: 40px; width: auto; }
+
+    .faq details {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: .85rem 1rem;
+      margin-bottom: .7rem;
+      background: rgba(255,255,255,.02);
+    }
+    .faq summary { cursor: pointer; font-weight: 600; color: #f2f5fa; }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .contact ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .65rem; }
+
+    .cta-final {
+      text-align: center;
+      background: linear-gradient(145deg, rgba(201,166,106,.14), rgba(255,255,255,.02));
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-final::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(201,166,106,.18);
+      top: -70px;
+      right: -40px;
+      filter: blur(6px);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: var(--muted);
+      padding: 1.5rem 0 2.2rem;
+      font-size: .92rem;
+    }
+
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    [data-animate].in { opacity: 1; transform: translateY(0); }
+
+    @keyframes slowZoom {
+      0% { transform: scale(1.02); }
+      100% { transform: scale(1.1); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 8px 20px rgba(201,166,106,.3); }
+      50% { box-shadow: 0 12px 26px rgba(201,166,106,.45); }
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .gallery, .contact { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: repeat(2,1fr); }
+      .process { grid-template-columns: repeat(2,1fr); }
+      .strip, .logos { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .nav-links { display: none; }
+      .hero-media img { min-height: 300px; }
+    }
+
+    @media (max-width: 640px) {
+      .cards, .process, .strip, .logos { grid-template-columns: 1fr; }
+      .hero { padding-top: 3.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="Ir al inicio">
+        <span class="brand-mark">PB</span>
+        <span>Ponsoda & Bernat <small style="display:block;font-weight:500;color:var(--muted)">Abogados · Oliva</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Método</a>
+        <a href="#galeria">Firma</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="btn btn-primary" href="tel:+34678365709">Llamar ahora</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="panel hero-main" data-animate>
+          <span class="eyebrow">Despacho legal en Oliva, Valencia</span>
+          <h1>Defensa legal premium para decisiones importantes.</h1>
+          <p>Combinamos rigor jurídico, cercanía y estrategia para proteger tus intereses en cada fase del procedimiento. Sin rodeos, sin incertidumbre, con una hoja de ruta clara desde el primer día.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contacto">Reservar consulta</a>
+            <a class="btn btn-ghost" href="https://wa.me/34646734083" target="_blank" rel="noopener">WhatsApp directo</a>
+          </div>
+          <div class="badges" aria-label="Puntos de valor">
+            <span class="badge">✔ Respuesta en &lt; 24h</span>
+            <span class="badge">✔ Asistencia al detenido 365 días</span>
+            <span class="badge">✔ Español / Inglés</span>
+          </div>
+        </article>
+
+        <aside class="panel hero-media" data-animate>
+          <img src="https://www.ponbeabogados.com/wp-content/uploads/2025/01/ponbe-nosotros-1-1024x683.jpg" alt="Despacho profesional de Ponsoda y Bernat Abogados" loading="eager" />
+          <div class="hero-overlay">
+            <strong>Más de una década de experiencia</strong>
+            <p>Resolviendo asuntos civiles, penales, administrativos y mercantiles con excelencia técnica.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div class="container strip">
+        <article class="mini" data-animate><strong>+10 años</strong><p>de dedicación jurídica y litigación continua.</p></article>
+        <article class="mini" data-animate><strong>Atención urgente</strong><p>servicio inmediato para detenciones y urgencias.</p></article>
+        <article class="mini" data-animate><strong>Trato personal</strong><p>comunicación directa con abogados, sin intermediarios.</p></article>
+        <article class="mini" data-animate><strong>Visión estratégica</strong><p>enfoque integral con objetivos definidos.</p></article>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <h2>Áreas de especialización</h2>
+          <p>Soluciones legales completas para particulares, familias y empresas.</p>
+        </div>
+        <div class="cards">
+          <article class="card" data-animate><div class="icon"><img src="https://www.ponbeabogados.com/wp-content/uploads/2025/01/derecho-penal.png" alt="Icono derecho penal" loading="lazy"></div><h3>Derecho Penal</h3><p>Defensa técnica en procedimientos penales, diligencias urgentes y juicios rápidos.</p></article>
+          <article class="card" data-animate><div class="icon"><img src="https://www.ponbeabogados.com/wp-content/uploads/2025/01/derecho-administrativo.png" alt="Icono derecho administrativo" loading="lazy"></div><h3>Administrativo</h3><p>Urbanismo, extranjería y recursos contencioso-administrativos ante sanciones y expedientes.</p></article>
+          <article class="card" data-animate><div class="icon"><img src="https://www.ponbeabogados.com/wp-content/uploads/2025/01/derecho-civil.png" alt="Icono derecho civil" loading="lazy"></div><h3>Derecho Civil</h3><p>Contratos, herencias, reclamaciones e indemnizaciones por daños y perjuicios.</p></article>
+          <article class="card" data-animate><div class="icon">👨‍👩‍👧</div><h3>Familia</h3><p>Divorcios, custodia, pensiones y medidas orientadas a la estabilidad familiar.</p></article>
+          <article class="card" data-animate><div class="icon">🚗</div><h3>Accidentes de Tráfico</h3><p>Reclamación de indemnizaciones y defensa jurídica tras siniestros.</p></article>
+          <article class="card" data-animate><div class="icon">🏢</div><h3>Mercantil y Bancario</h3><p>Conflictos empresariales, contratos, cláusulas abusivas y defensa financiera.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <h2>Método de trabajo</h2>
+          <p>Precisión jurídica, ejecución impecable y seguimiento constante.</p>
+        </div>
+        <div class="process">
+          <article class="card" data-animate><div class="step-num">1</div><h3>Análisis</h3><p>Estudio legal, plazos, riesgos y escenarios para orientar tu decisión.</p></article>
+          <article class="card" data-animate><div class="step-num">2</div><h3>Estrategia</h3><p>Plan de defensa o reclamación adaptado a tus prioridades reales.</p></article>
+          <article class="card" data-animate><div class="step-num">3</div><h3>Acción</h3><p>Negociación o litigio con información continua y máxima transparencia.</p></article>
+          <article class="card" data-animate><div class="step-num">4</div><h3>Resultado</h3><p>Cierre legal con enfoque en seguridad jurídica y protección de tus derechos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <h2>Firma y reconocimiento</h2>
+          <p>Imágenes reales del despacho y trayectoria profesional.</p>
+        </div>
+        <div class="gallery">
+          <article class="panel gallery-main" data-animate>
+            <img src="https://www.ponbeabogados.com/wp-content/uploads/2025/02/macu-bernat2.jpg" alt="Acto de reconocimiento profesional en el ámbito jurídico" loading="lazy" />
+          </article>
+          <aside class="gallery-side">
+            <article class="panel" data-animate><img src="https://www.ponbeabogados.com/wp-content/uploads/2025/02/macu-bernat3.jpg" alt="Intervención pública en evento jurídico" loading="lazy" /></article>
+            <article class="panel" data-animate><img src="https://www.ponbeabogados.com/wp-content/uploads/2025/02/macu-bernat4.jpg" alt="Representación institucional y trayectoria profesional" loading="lazy" /></article>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="medios">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <h2>Presencia en medios y entidades</h2>
+          <p>Despacho visible en prensa y vinculado al entorno profesional jurídico.</p>
+        </div>
+        <div class="logos">
+          <article class="logo-item" data-animate><img src="https://www.ponbeabogados.com/wp-content/uploads/2025/02/Levante-periodico-logo.png" alt="Logo Levante" loading="lazy"></article>
+          <article class="logo-item" data-animate><img src="https://www.ponbeabogados.com/wp-content/uploads/2025/02/las-provincias-logo.png" alt="Logo Las Provincias" loading="lazy"></article>
+          <article class="logo-item" data-animate><img src="https://www.ponbeabogados.com/wp-content/uploads/2025/02/valencia-plaza-1.png" alt="Logo Valencia Plaza" loading="lazy"></article>
+          <article class="logo-item" data-animate><img src="https://www.ponbeabogados.com/wp-content/uploads/2025/01/icav-e1739364486285.png" alt="Logo ICAV" loading="lazy"></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <h2>Preguntas frecuentes</h2>
+          <p>Respuestas rápidas para actuar con seguridad desde hoy.</p>
+        </div>
+        <details data-animate>
+          <summary>¿Puedo tener una valoración inicial de mi caso?</summary>
+          <p>Sí. Revisamos la viabilidad, la urgencia y la documentación para definir contigo el primer paso correcto.</p>
+        </details>
+        <details data-animate>
+          <summary>¿Atendéis urgencias por detención?</summary>
+          <p>Sí, disponemos de asistencia urgente para actuaciones inmediatas durante todo el año.</p>
+        </details>
+        <details data-animate>
+          <summary>¿Cómo sabré el coste del procedimiento?</summary>
+          <p>Recibirás presupuesto claro y por escrito, adaptado al alcance real del asunto.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container contact">
+        <article class="card" data-animate>
+          <h2>Contacto directo</h2>
+          <p>Atención presencial en Oliva y online para toda España.</p>
+          <ul>
+            <li><strong>📞 Teléfono:</strong> <a href="tel:+34678365709">+34 678 36 57 09</a></li>
+            <li><strong>📱 WhatsApp:</strong> <a href="https://wa.me/34646734083" target="_blank" rel="noopener">+34 646 73 40 83</a></li>
+            <li><strong>✉️ Email:</strong> <a href="mailto:macu@ponbeabogados.com">macu@ponbeabogados.com</a></li>
+            <li><strong>📍 Dirección:</strong> C/ Les Fonts 15, E, 46780 Oliva (Valencia)</li>
+            <li><strong>🕒 Horario:</strong> Lunes a viernes · 08:00 a 20:00</li>
+          </ul>
+        </article>
+
+        <article class="card cta-final" data-animate>
+          <h2>¿Hablamos de tu caso hoy?</h2>
+          <p>Te damos una hoja de ruta legal clara para que sepas exactamente qué hacer y cuándo hacerlo.</p>
+          <p><a class="btn btn-primary" href="mailto:macu@ponbeabogados.com?subject=Consulta%20legal">Enviar consulta</a></p>
+          <p style="font-size:.9rem;margin:0">Tiempo de respuesta estimado: &lt; 24h hábiles.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem">
+      <span>© <span id="year"></span> Ponsoda & Bernat Abogados. Todos los derechos reservados.</span>
+      <a href="#inicio">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
